@@ -47,7 +47,11 @@ It serves as a showcase of both scientific understanding and software engineerin
   * **ITD-ILD Matrix**: 2D heatmap showing ITD response at various ILD levels.
     
 * **Page Demo**: 
+---
+
 ![Data Visualization Page Demo](assets/viz-data.gif)
+
+---
 
 ### 3. ITD-ILD Analysis
 
@@ -59,8 +63,13 @@ It serves as a showcase of both scientific understanding and software engineerin
   * Filters valid peaks based on closeness to reference ITD.
   * Fits a linear regression to valid (ILD, ITD) pairs.
   * 
-* **Page Demo**: 
+* **Page Demo**:
+
+---
+
 ![Data Visualization Page Demo](assets/itd-ild.gif)
+
+---
 
 ### 4. Peak-Trough Ratio Analysis
 
@@ -75,8 +84,13 @@ It serves as a showcase of both scientific understanding and software engineerin
     * Line plot of normalized ratios.
     * Corresponding ITD-ILD heatmap.
 
-* **Page Demo**: 
+* **Page Demo**:
+
+---
+
 ![Data Visualization Page Demo](assets/peak-trough.gif)
+
+---
 
 ### 5. Peak-Trough Range Distribution
 
@@ -87,8 +101,13 @@ It serves as a showcase of both scientific understanding and software engineerin
   * Plots a histogram of these range values.
   * Useful for identifying neurons with highly tuned vs. flat responses.
 
-* **Page Demo**: 
+* **Page Demo**:
+
+---
+
 ![Data Visualization Page Demo](assets/peak-trough-hist.gif)
+
+---
 
 ## Technologies Used
 
@@ -128,10 +147,13 @@ streamlit run app.py
 
 # Acknowledgments
 
+---
+
 Special thanks to **Dr. Brian Fischer** for his invaluable guidance and mentorship on this project, and for his wonderful work in auditory neuroscience research. This tool was built as part of our ongoing research in understanding population-level auditory coding in barn owls.
 
 * **Contact**: rsyeda@seattleu.edu
 * **Project by**: Ruqhaiya Fatima Syeda
 
+---
 For further details or to collaborate, feel free to reach out or explore the project. 
 
