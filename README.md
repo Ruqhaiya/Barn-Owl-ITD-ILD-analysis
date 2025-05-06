@@ -125,8 +125,8 @@ streamlit run app.py
 
 Special thanks to **Dr. Brian Fischer** for his invaluable guidance and mentorship on this project, and for his wonderful work in auditory neuroscience research. This tool was built as part of our ongoing research in understanding population-level auditory coding in barn owls.
 
-Contact: rsyeda@seattleu.edu
-Project by: Ruqhaiya Fatima Syeda
+* **Contact**: rsyeda@seattleu.edu
+* **Project by**: Ruqhaiya Fatima Syeda
 
 For further details or to collaborate, feel free to reach out or explore the project. 
 
