@@ -189,12 +189,9 @@ elif page == "ITD-ILD Analysis":
 
     # User input for running all neurons or selecting one manually
     # run_all_neurons = st_app.checkbox("Run All Neurons")
-    
-    if not run_all_neurons:
-        neuron_index = st_app.number_input("Enter Neuron Index (0-75):", min_value=0, max_value=75, step=1)
-        neuron_indices = [neuron_index]
-    else:
-        neuron_indices = list(range(len(df_files)))  # Process all neurons
+
+    neuron_index = st_app.number_input("Enter Neuron Index (0-75):", min_value=0, max_value=75, step=1)
+    neuron_indices = [neuron_index]
 
     # ITD tolerance for filtering peaks
     itd_tolerance = st_app.slider("ITD Tolerance (µs)", min_value=10, max_value=200, value=50, step=5)
