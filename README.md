@@ -1,4 +1,4 @@
-# 🦉 Barn Owl Neuroscience Data Explorer 
+# Barn Owl Neuroscience Data Explorer 
 
 ## Overview
 
