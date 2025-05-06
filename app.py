@@ -292,7 +292,7 @@ elif page == "ITD-ILD Analysis":
                         )
 
                     # Regression Plot (only if running a single neuron)
-                    if not run_all_neurons and len(valid_ild) > 1:
+                    if not len(valid_ild) > 1:
                         slope, intercept, r_value, p_value, std_err = linregress(valid_ild, valid_itd)
 
                         # Store slopes dynamically
@@ -313,7 +313,7 @@ elif page == "ITD-ILD Analysis":
                         plt.legend(fontsize=12, frameon=True, loc='best')
                         st_app.pyplot(plt)
                         plt.close()
-                    elif run_all_neurons and len(valid_ild) > 1:
+                    elif len(valid_ild) > 1:
                         # Store slopes for all neurons
                         slope, _, _, _, _ = linregress(valid_ild, valid_itd)
                         st_app.session_state.slopes.append(slope)
@@ -322,7 +322,7 @@ elif page == "ITD-ILD Analysis":
                     st_app.warning(f"No ITD-ILD data available for neuron {neuron_index}.")
 
  # See More Details" Section- only if running a single neuron)
-    if not run_all_neurons and st_app.button("See More Details"):
+    if not st_app.button("See More Details"):
         st_app.text(f"Reference ITD: {reference_itd:.1f} µs")
         col1, col2, col3, col4 = st_app.columns(4)
 
