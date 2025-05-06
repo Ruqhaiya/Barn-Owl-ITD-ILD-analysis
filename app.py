@@ -36,7 +36,7 @@ st_app.title("Barn Owl Neuroscience Data Explorer")
 page = st_app.sidebar.radio("Select Page", ["Home", "Visualize Data", "ITD-ILD Analysis", "Peak-Trough Ratio Analysis", "Peak-Trough Range Distribution"])
 
 if page == "Home":
-    st_app.subheader("Welcome to the Barn Owl Neuroscience Explorer!")
+    st_app.subheader("Welcome to the ICCL response viewer!")
 
     # option to show entire dataset (optional)
     if st_app.checkbox("Show complete dataset"):
