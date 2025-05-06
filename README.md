@@ -27,7 +27,7 @@ It serves as a showcase of both scientific understanding and software engineerin
 * Option to view the full dataset of available neuron recordings, this dataset is basically metadata of filepaths to those recordings. Meaning, this is what we use to locate a file for a particular neuron and the files are stored in a directory called 'merged data'. 
 
 * **Page Demo**: 
-![Data Visualization Page Demo](assets/viz-data.gif)
+![Data Visualization Page Demo](assets/home.gif)
 
 ### 2. Visualize Data
 
@@ -54,7 +54,7 @@ It serves as a showcase of both scientific understanding and software engineerin
   * Fits a linear regression to valid (ILD, ITD) pairs.
   * 
 * **Page Demo**: 
-![Data Visualization Page Demo](assets/viz-data.gif)
+![Data Visualization Page Demo](assets/itd-ild.gif)
 
 ### 4. Peak-Trough Ratio Analysis
 
@@ -70,7 +70,7 @@ It serves as a showcase of both scientific understanding and software engineerin
     * Corresponding ITD-ILD heatmap.
 
 * **Page Demo**: 
-![Data Visualization Page Demo](assets/viz-data.gif)
+![Data Visualization Page Demo](assets/peak-trough.gif)
 
 ### 5. Peak-Trough Range Distribution
 
@@ -82,7 +82,7 @@ It serves as a showcase of both scientific understanding and software engineerin
   * Useful for identifying neurons with highly tuned vs. flat responses.
 
 * **Page Demo**: 
-![Data Visualization Page Demo](assets/viz-data.gif)
+![Data Visualization Page Demo](assets/peak-trough-hist.gif)
 
 ## Technologies Used
 
