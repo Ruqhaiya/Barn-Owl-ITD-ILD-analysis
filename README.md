@@ -27,8 +27,13 @@ It serves as a showcase of both scientific understanding and software engineerin
 * Option to view the full dataset of available neuron recordings (metadata with paths to ITD/ILD/etc. files).  
 * These data files are stored in a directory named `merged_data`.
 
-* **Page Demo**: 
+* **Page Demo**:
+  
+---
+
 ![Data Visualization Page Demo](assets/home.gif)
+
+--- 
 
 ### 2. Visualize Data
 
