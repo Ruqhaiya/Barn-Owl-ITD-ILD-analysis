@@ -24,7 +24,8 @@ It serves as a showcase of both scientific understanding and software engineerin
 ### 1. Home
 
 * Provides an introduction to the app.
-* Option to view the full dataset of available neuron recordings, this dataset is basically metadata of filepaths to those recordings. Meaning, this is what we use to locate a file for a particular neuron and the files are stored in a directory called 'merged data'. 
+* Option to view the full dataset of available neuron recordings (metadata with paths to ITD/ILD/etc. files).  
+* These data files are stored in a directory named `merged_data`.
 
 * **Page Demo**: 
 ![Data Visualization Page Demo](assets/home.gif)
@@ -120,4 +121,11 @@ streamlit run app.py
 ```
 ---
 
-For further details or to collaborate, feel free to reach out or explore the project. rsyeda@gmail.com 
+Acknowledgments
+Special thanks to Professor Brian Fischer for his invaluable guidance and mentorship on this project, and for his wonderful work in auditory neuroscience research. This tool was built as part of our ongoing research in understanding population-level auditory coding in barn owls.
+
+Contact: rsyeda@seattleu.edu
+Project by: Ruqhaiya Fatima Syeda
+
+For further details or to collaborate, feel free to reach out or explore the project. 
+
