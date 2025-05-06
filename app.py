@@ -33,7 +33,7 @@ df_files = load_data()
 st_app.title("Barn Owl Neuroscience Data Explorer")
 
 # Navigation
-page = st_app.sidebar.radio("Select Page", ["Home", "Visualize Data", "ITD-ILD Analysis", "Peak-Trough Ratio Analysis"])
+page = st_app.sidebar.radio("Select Page", ["Home", "Visualize Data", "ITD-ILD Analysis", "Peak-Trough Ratio Analysis", "Peak-Trough Range Distribution"])
 
 if page == "Home":
     st_app.subheader("Welcome to the Barn Owl Neuroscience Explorer!")
@@ -122,67 +122,67 @@ elif page == "Visualize Data":
     else:
         st_app.warning("Invalid Neuron Index selected.")
 
-elif page == "Visualize Data":
-    st_app.subheader("Neuron Data Visualization")
+# elif page == "Visualize Data":
+#     st_app.subheader("Neuron Data Visualization")
 
-    # Allow user to input Neuron ID
-    neuron_index = st_app.number_input("Enter Neuron Index (0-114):", min_value=0, max_value=114, step=1)
+#     # Allow user to input Neuron ID
+#     neuron_index = st_app.number_input("Enter Neuron Index (0-114):", min_value=0, max_value=114, step=1)
 
-    if neuron_index in df_files.index:
-        st_app.write(f"Showing available plots for Neuron Index: {neuron_index}")
-        st_app.dataframe(df_files.iloc[[neuron_index]])
+#     if neuron_index in df_files.index:
+#         st_app.write(f"Showing available plots for Neuron Index: {neuron_index}")
+#         st_app.dataframe(df_files.iloc[[neuron_index]])
 
-        # Extract file paths dynamically
-        plots_generated = False
-        fig_list = []
+#         # Extract file paths dynamically
+#         plots_generated = False
+#         fig_list = []
 
-        # ITD Plot
-        itd_file_name = df_files.iloc[neuron_index]["itd_file_name"]
-        if itd_file_name and isinstance(itd_file_name, str):
-            itd_path = os.path.join(paths["itd"], itd_file_name)
-            if os.path.exists(itd_path):
-                ITD, mean_spike_count_itd, std_spike_count_itd = dl.load_itd_mat(itd_path)
-                st.fit_itd_curve(ITD, mean_spike_count_itd, std_spike_count_itd, plot=True)
-                fig_list.append(plt.gcf())
-                plots_generated = True
+#         # ITD Plot
+#         itd_file_name = df_files.iloc[neuron_index]["itd_file_name"]
+#         if itd_file_name and isinstance(itd_file_name, str):
+#             itd_path = os.path.join(paths["itd"], itd_file_name)
+#             if os.path.exists(itd_path):
+#                 ITD, mean_spike_count_itd, std_spike_count_itd = dl.load_itd_mat(itd_path)
+#                 st.fit_itd_curve(ITD, mean_spike_count_itd, std_spike_count_itd, plot=True)
+#                 fig_list.append(plt.gcf())
+#                 plots_generated = True
 
-        # ILD Plot
-        ild_file_name = df_files.iloc[neuron_index]["ild_file_name"]
-        if ild_file_name and isinstance(ild_file_name, str):
-            ild_path = os.path.join(paths["ild"], ild_file_name)
-            if os.path.exists(ild_path):
-                ILD, mean_spike_count_ild, std_spike_count_ild = dl.load_ild_mat(ild_path)
-                st.fit_ild_curve(ILD, mean_spike_count_ild, std_spike_count_ild, plot=True)
-                fig_list.append(plt.gcf())
-                plots_generated = True
+#         # ILD Plot
+#         ild_file_name = df_files.iloc[neuron_index]["ild_file_name"]
+#         if ild_file_name and isinstance(ild_file_name, str):
+#             ild_path = os.path.join(paths["ild"], ild_file_name)
+#             if os.path.exists(ild_path):
+#                 ILD, mean_spike_count_ild, std_spike_count_ild = dl.load_ild_mat(ild_path)
+#                 st.fit_ild_curve(ILD, mean_spike_count_ild, std_spike_count_ild, plot=True)
+#                 fig_list.append(plt.gcf())
+#                 plots_generated = True
 
-        # ABL Plot
-        abl_file_name = df_files.iloc[neuron_index]["abl_file_name"]
-        if abl_file_name and isinstance(abl_file_name, str):
-            abl_path = os.path.join(paths["abl"], abl_file_name)
-            if os.path.exists(abl_path):
-                ABL, mean_spike_count_abl, std_spike_count_abl = dl.load_abl_mat(abl_path)
-                st.fit_abl_curve(ABL, mean_spike_count_abl, std_spike_count_abl, plot=False)
-                fig_list.append(plt.gcf())
-                plots_generated = True
+#         # ABL Plot
+#         abl_file_name = df_files.iloc[neuron_index]["abl_file_name"]
+#         if abl_file_name and isinstance(abl_file_name, str):
+#             abl_path = os.path.join(paths["abl"], abl_file_name)
+#             if os.path.exists(abl_path):
+#                 ABL, mean_spike_count_abl, std_spike_count_abl = dl.load_abl_mat(abl_path)
+#                 st.fit_abl_curve(ABL, mean_spike_count_abl, std_spike_count_abl, plot=False)
+#                 fig_list.append(plt.gcf())
+#                 plots_generated = True
 
-        # Frequency Plot
-        freq_file_name = df_files.iloc[neuron_index]["freq_file_name"]
-        if freq_file_name and isinstance(freq_file_name, str):
-            freq_path = os.path.join(paths["freq"], freq_file_name)
-            if os.path.exists(freq_path):
-                frequency, mean_spike_count_freq, std_spike_count_freq = dl.load_freq_mat(freq_path)
-                st.fit_frequency_curve(frequency, mean_spike_count_freq, std_spike_count_freq, plot=False)
-                fig_list.append(plt.gcf())
-                plots_generated = True
+#         # Frequency Plot
+#         freq_file_name = df_files.iloc[neuron_index]["freq_file_name"]
+#         if freq_file_name and isinstance(freq_file_name, str):
+#             freq_path = os.path.join(paths["freq"], freq_file_name)
+#             if os.path.exists(freq_path):
+#                 frequency, mean_spike_count_freq, std_spike_count_freq = dl.load_freq_mat(freq_path)
+#                 st.fit_frequency_curve(frequency, mean_spike_count_freq, std_spike_count_freq, plot=False)
+#                 fig_list.append(plt.gcf())
+#                 plots_generated = True
     
-        # Display all generated plots
-        if plots_generated:
-            st_app.subheader("Generated Plots")
-            for fig in fig_list:
-                st_app.pyplot(fig)
-        else:
-            st_app.warning("No valid data files found for this neuron.")
+#         # Display all generated plots
+#         if plots_generated:
+#             st_app.subheader("Generated Plots")
+#             for fig in fig_list:
+#                 st_app.pyplot(fig)
+#         else:
+#             st_app.warning("No valid data files found for this neuron.")
 
 elif page == "ITD-ILD Analysis":
     st_app.subheader("ITD-ILD Analysis")
@@ -411,6 +411,11 @@ elif page == "Peak-Trough Ratio Analysis":
 
                     plt.tight_layout()
                     st_app.pyplot(fig)
+                    # Also show the full ITD-ILD matrix plot below
+                    fig_matrix = st.fit_itdild_matrix(ITD, ILD, mean_spike_count_itdild, plot=True)
+                    st_app.subheader("ITD-ILD Matrix Plot")
+                    st_app.plotly_chart(fig_matrix)
+
                     plt.close()
 
                 else:
@@ -419,6 +424,44 @@ elif page == "Peak-Trough Ratio Analysis":
                 st_app.warning("ITD-ILD file does not exist for this neuron.")
         else:
             st_app.warning("No ITD-ILD data available for this neuron.")
+
+elif page == "Peak-Trough Range Distribution":
+    st_app.subheader("Distribution of Peak-Trough Ranges Across Neurons")
+
+    spike_threshold = st_app.slider("Minimum Peak Spike Count (Spikes)", 1, 10, 2)
+
+    range_values = []
+
+    for neuron_index in df_files.index:
+        itdild_file_name = df_files.loc[neuron_index, "itdild_file_name"]
+        if itdild_file_name and isinstance(itdild_file_name, str):
+            itdild_path = os.path.join(paths["itdild"], itdild_file_name)
+            if os.path.exists(itdild_path):
+                ITD, ILD, mean_spike_count_itdild, std_spike_count_itdild = dl.load_itdild_mat(itdild_path)
+
+                ratios = []
+                for itd_curve in mean_spike_count_itdild:
+                    peak = np.max(itd_curve)
+                    trough = np.min(itd_curve)
+                    if peak >= spike_threshold:
+                        ratio = (peak - trough) / peak
+                        ratios.append(ratio)
+
+                if len(ratios) > 0:
+                    range_val = max(ratios) - min(ratios)
+                    range_values.append(range_val)
+
+    if len(range_values) > 0:
+        plt.figure(figsize=(8, 5))
+        plt.hist(range_values, bins=15, color='mediumseagreen', edgecolor='black', alpha=0.8)
+        plt.xlabel("Range of (Peak - Trough) / Peak", fontsize=12)
+        plt.ylabel("Number of Neurons", fontsize=12)
+        plt.title("Histogram of Peak-Trough Ratio Ranges", fontsize=14)
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        st_app.pyplot(plt)
+        plt.close()
+    else:
+        st_app.warning("No valid data found for the current threshold.")
 
 else:
     st_app.warning("No ITD-ILD data available for this neuron.")
