@@ -26,7 +26,8 @@ It serves as a showcase of both scientific understanding and software engineerin
 * Provides an introduction to the app.
 * Option to view the full dataset of available neuron recordings, this dataset is basically metadata of filepaths to those recordings. Meaning, this is what we use to locate a file for a particular neuron and the files are stored in a directory called 'merged data'. 
 
-![image](https://github.com/user-attachments/assets/1cee0193-4c1f-464a-8dcf-618416c2c0f0)
+* **Page Demo**: 
+![Data Visualization Page Demo](assets/viz-data.gif)
 
 ### 2. Visualize Data
 
@@ -51,6 +52,9 @@ It serves as a showcase of both scientific understanding and software engineerin
   * Reference ITD is determined using the strongest response curve (largest peak-trough difference).
   * Filters valid peaks based on closeness to reference ITD.
   * Fits a linear regression to valid (ILD, ITD) pairs.
+  * 
+* **Page Demo**: 
+![Data Visualization Page Demo](assets/viz-data.gif)
 
 ### 4. Peak-Trough Ratio Analysis
 
@@ -65,6 +69,9 @@ It serves as a showcase of both scientific understanding and software engineerin
     * Line plot of normalized ratios.
     * Corresponding ITD-ILD heatmap.
 
+* **Page Demo**: 
+![Data Visualization Page Demo](assets/viz-data.gif)
+
 ### 5. Peak-Trough Range Distribution
 
 * **Purpose**: Explore distribution of response curve dynamic range across neurons.
@@ -73,6 +80,9 @@ It serves as a showcase of both scientific understanding and software engineerin
   * For each neuron, computes the range of normalized peak-trough ratios.
   * Plots a histogram of these range values.
   * Useful for identifying neurons with highly tuned vs. flat responses.
+
+* **Page Demo**: 
+![Data Visualization Page Demo](assets/viz-data.gif)
 
 ## Technologies Used
 
