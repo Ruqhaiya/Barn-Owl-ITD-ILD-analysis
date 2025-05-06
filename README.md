@@ -38,7 +38,7 @@ It serves as a showcase of both scientific understanding and software engineerin
   * **ABL**: Amplitude Level tuning.
   * **Frequency**: Frequency tuning curve.
   * **ITD-ILD Matrix**: 2D heatmap showing ITD response at various ILD levels.
-![Data Visualization Page Demo] (assets/viz-data.gif)
+![Data Visualization Page Demo](assets/viz-data.gif)
 
 ### 3. ITD-ILD Analysis
 
