@@ -36,7 +36,7 @@ It serves as a showcase of both scientific understanding and software engineerin
 
   * **ITD**: Interaural Time Difference tuning curve.
   * **ILD**: Interaural Level Difference tuning curve.
-  * **ABL**: Amplitude Level tuning.
+  * **ABL**: Average Binaural Level.
   * **Frequency**: Frequency tuning curve.
   * **ITD-ILD Matrix**: 2D heatmap showing ITD response at various ILD levels.
     
@@ -120,4 +120,4 @@ streamlit run app.py
 ```
 ---
 
-For further details or to collaborate, feel free to reach out or explore the project. 
+For further details or to collaborate, feel free to reach out or explore the project. rsyeda@gmail.com 
