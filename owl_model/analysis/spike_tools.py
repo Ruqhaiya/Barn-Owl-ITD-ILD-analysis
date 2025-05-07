@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from elephant.spike_train_dissimilarity import victor_purpura_distance, van_rossum_distance
+# from elephant.spike_train_dissimilarity import victor_purpura_distance, van_rossum_distance
 from neo.core import SpikeTrain
 import quantities as pq
 from scipy import linalg
@@ -431,16 +431,16 @@ def gamma_factor(spike_times, T_min, T_max, time_bin):
     return gamma
    
     
-def get_victor_purpura_distance(spike_times, cost_factor, T_min, T_max):
+# def get_victor_purpura_distance(spike_times, cost_factor, T_min, T_max):
     
-    # Convert array of spike times to neo.SpikeTrain
-    spike_train = [SpikeTrain(spikes, units='ms', t_start=T_min, t_stop= T_max) for spikes in spike_times]
+#     # Convert array of spike times to neo.SpikeTrain
+#     spike_train = [SpikeTrain(spikes, units='ms', t_start=T_min, t_stop= T_max) for spikes in spike_times]
     
-    # Compute the Victor Purpura distance for all pairs of spike trains
-    victor_purpura_matrix = victor_purpura_distance(spike_train, cost_factor)
+#     # Compute the Victor Purpura distance for all pairs of spike trains
+#     victor_purpura_matrix = victor_purpura_distance(spike_train, cost_factor)
     
-    # Return the mean of all unique pairs
-    return np.mean(victor_purpura_matrix[np.triu_indices(victor_purpura_matrix.shape[0], k=1)])
+#     # Return the mean of all unique pairs
+#     return np.mean(victor_purpura_matrix[np.triu_indices(victor_purpura_matrix.shape[0], k=1)])
 
 
 def get_van_rossum_distance(spike_times, tau, T_min, T_max):
