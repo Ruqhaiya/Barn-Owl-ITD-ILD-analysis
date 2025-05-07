@@ -38,9 +38,51 @@ page = st_app.sidebar.radio("Select Page", ["Home", "Visualize Data", "ITD-ILD A
 if page == "Home":
     st_app.subheader("Welcome to the ICCL response viewer!")
 
-    # option to show entire dataset (optional)
+    st_app.markdown("""
+    <br>
+    <h3>Have you ever rerun the same code cells for the 100th time in a Jupyter notebook—just to inspect a new data file or one more plot?</h3>
+
+    That was a regular part of our workflow while collaborating with Dr. Brian Fischer on a neuroscience project modeling the diversity of auditory responses in barn owls. We were exploring how neurons in the lateral shell of the central nucleus of the inferior colliculus (ICcl) respond to auditory cues like Interaural Time Difference (ITD), Interaural Level Difference (ILD), Average Binaural Level and frequency. ICcl is a key part of the midbrain involved in spatial hearing.
+
+    <br><br>
+    If that sounded like a lot of scientific jargon — you’re not alone.
+
+    <br><br>
+    It took me weeks to figure out what all of that really meant too.
+
+    <br><br>
+    In simple terms: we were trying to understand how owls hear where sounds are coming from — and why some neurons react differently than others.
+
+    <br><br>
+    Each neuron came with multiple .mat recording files — ITD, ILD, frequency, ABL — and we’d often plot all of them just to understand how one neuron responded. Now multiply that by over 115 neurons… and you’ve got a workflow full of Jupyter notebooks, copy-pasted paths, and analysis notes scattered everywhere.
+
+    <br><br>
+    It quickly got overwhelming.
+
+    <br><br>
+    So, to speed things up (and save our sanity), I built an interactive Streamlit web app that’s now making our job so much easier.
+
+    <br><br>
+    The app lets us visualize and analyze tuning data across multiple auditory dimensions, while also allowing us to tweak parameters like minimum spike count threshold and ILD values. Shifting these parameters is essential as it helps us compare neuronal responses under different conditions and spot patterns that guide our hypotheses.
+
+    <br><br>
+    As you might have guessed by now, the process of building this app wasn’t that straightforward because of how the dataset was initially structured.
+
+    <br><br>
+    Hence, I organized these files into a structured metadata DataFrame by mapping each neuron to its corresponding files and the file names were renamed with the most appropriate naming convention that we agreed on. This was another major milestone in the project as it was acting as a bottleneck many times, especially when we were preparing our poster for the neuroscience conference in September 2024. And as we had hoped, this approach helped us maintain consistency across the dataset and allowed the app to load and process any neuron's data on demand without having to run a single line of code!
+
+    <br><br>
+    I am excited about how the app looks right now and I’m currently working on making it more useful. The best part about this project–or my job–is that I get to solve a very specific data problem using my 2 years of data engineering experience, and then I analyze the data, build models on top of it– which allows me to put my learnings into practice as an upcoming data scientist.
+
+    <br><br>
+    If you’re working with large sets of tuning data — or just tired of clicking “Run Again” — take a look at our app!
+
+    """, unsafe_allow_html=True)
+
+     # option to show entire dataset (optional)
     if st_app.checkbox("Show complete dataset"):
         st_app.dataframe(df_files)
+
 
 elif page == "Visualize Data":
     st_app.subheader("Neuron Data Visualization")
